@@ -18,32 +18,33 @@ DBSession = sessionmaker(bind=engine)
 # session.rollback()
 session = DBSession()
 
+
 # Items for Soccer
 category1 = Category(title="Soccer")
 
 session.add(category1)
 session.commit()
 
-Item1 = MenuItem(title="Soccer cleats", description="Unleash The Speed In The Exclusive Initiator Pack. Think Fast. Play Explosive.",
+Item1 = Item(title="Soccer cleats", description="Unleash The Speed In The Exclusive Initiator Pack. Think Fast. Play Explosive.",
                  category=category1)
 
 session.add(Item1)
 session.commit()
 
 
-Item2 = MenuItem(title="Shinguards", description="Always Be Prepared For The Season With our Sporting Goods.",
+Item2 = Item(title="Shinguards", description="Always Be Prepared For The Season With our Sporting Goods.",
                  category=category1)
 
 session.add(Item2)
 session.commit()
 
-Item3 = MenuItem(title="Soccer Jersey", description="Just do it and win.",
-                 course="Entree", category=category1)
+Item3 = Item(title="Soccer Jersey", description="Just do it and win.",
+                 category=category1)
 
 session.add(Item3)
 session.commit()
 
-Item4 = MenuItem(title="Goalkeeper gloves", description="Don't let them score a single goal!",
+Item4 = Item(title="Goalkeeper gloves", description="Don't let them score a single goal!",
                  category=category1)
 
 session.add(Item4)
@@ -56,26 +57,26 @@ category2 = Category(title="Baseball")
 session.add(category2)
 session.commit()
 
-Item1 = MenuItem(title="Baseball cleats", description="Unleash The Speed In The Exclusive Initiator Pack. Think Fast. Play Explosive.",
+Item1 = Item(title="Baseball cleats", description="Unleash The Speed In The Exclusive Initiator Pack. Think Fast. Play Explosive.",
                  category=category2)
 
 session.add(Item1)
 session.commit()
 
 
-Item2 = MenuItem(title="Shinguards", description="Always Be Prepared For The Season With our Sporting Goods.",
+Item2 = Item(title="Shinguards", description="Always Be Prepared For The Season With our Sporting Goods.",
                  category=category2)
 
 session.add(Item2)
 session.commit()
 
-Item3 = MenuItem(title="Baseball Jersey", description="Just do it and win.",
+Item3 = Item(title="Baseball Jersey", description="Just do it and win.",
                  category=category2)
 
 session.add(Item3)
 session.commit()
 
-Item4 = MenuItem(title="Baseball glove", description="Don't let them score and catch that ball!",
+Item4 = Item(title="Baseball glove", description="Don't let them score and catch that ball!",
                  category=category2)
 
 session.add(Item4)
@@ -88,26 +89,26 @@ category3 = Category(title="Basketball")
 session.add(category3)
 session.commit()
 
-Item1 = MenuItem(title="Basketball shoes", description="Unleash The Speed In The Exclusive Initiator Pack. Think Fast. Play Explosive.",
+Item1 = Item(title="Basketball shoes", description="Unleash The Speed In The Exclusive Initiator Pack. Think Fast. Play Explosive.",
                  category=category3)
 
 session.add(Item1)
 session.commit()
 
 
-Item2 = MenuItem(title="Basketball", description="Always Be Prepared For The Season With our Sporting Goods.",
+Item2 = Item(title="Basketball", description="Always Be Prepared For The Season With our Sporting Goods.",
                  category=category3)
 
 session.add(Item2)
 session.commit()
 
-Item3 = MenuItem(title="Basketball Jersey", description="Just do it and win.",
+Item3 = Item(title="Basketball Jersey", description="Just do it and win.",
                  category=category3)
 
 session.add(Item3)
 session.commit()
 
-Item4 = MenuItem(title="Basketball socks", description="Don't let them score! Fly high!",
+Item4 = Item(title="Basketball socks", description="Don't let them score! Fly high!",
                  category=category3)
 
 session.add(Item4)
@@ -120,26 +121,26 @@ category4 = Category(title="Cycling")
 session.add(category4)
 session.commit()
 
-Item1 = MenuItem(title="Cycling shoes", description="Unleash The Speed In The Exclusive Initiator Pack. Think Fast. Ride Explosive.",
+Item1 = Item(title="Cycling shoes", description="Unleash The Speed In The Exclusive Initiator Pack. Think Fast. Ride Explosive.",
                  category=category4)
 
 session.add(Item1)
 session.commit()
 
 
-Item2 = MenuItem(title="Cycling shorts", description="Always Be Prepared For The Season With our Cycling shorts.",
+Item2 = Item(title="Cycling shorts", description="Always Be Prepared For The Season With our Cycling shorts.",
                  category=category4)
 
 session.add(Item2)
 session.commit()
 
-Item3 = MenuItem(title="Cycling Jersey", description="Just do it and win.",
+Item3 = Item(title="Cycling Jersey", description="Just do it and win.",
                  category=category4)
 
 session.add(Item3)
 session.commit()
 
-Item4 = MenuItem(title="Cycling gloves", description="Don't let them win, be a winner!",
+Item4 = Item(title="Cycling gloves", description="Don't let them win, be a winner!",
                  category=category4)
 
 session.add(Item4)
@@ -152,26 +153,26 @@ category5 = Category(title="Hockey")
 session.add(category5)
 session.commit()
 
-Item1 = MenuItem(title="Hockey skates", description="Unleash The Speed In The Exclusive Initiator Pack. Think Fast. Play Explosive.",
+Item1 = Item(title="Hockey skates", description="Unleash The Speed In The Exclusive Initiator Pack. Think Fast. Play Explosive.",
                  category=category5)
 
 session.add(Item1)
 session.commit()
 
 
-Item2 = MenuItem(title="Hockey Shinguards", description="Always Be Prepared For The Season With our Sporting Goods.",
+Item2 = Item(title="Hockey Shinguards", description="Always Be Prepared For The Season With our Sporting Goods.",
                  category=category5)
 
 session.add(Item2)
 session.commit()
 
-Item3 = MenuItem(title="Hockey Jersey", description="Just do it and win.",
+Item3 = Item(title="Hockey Jersey", description="Just do it and win.",
                  category=category5)
 
 session.add(Item3)
 session.commit()
 
-Item4 = MenuItem(title="Hockey gloves", description="Don't let them score and catch that thing!",
+Item4 = Item(title="Hockey gloves", description="Don't let them score and catch that thing!",
                  category=category5)
 
 session.add(Item4)
@@ -184,26 +185,26 @@ category6 = Category(title="Boxing")
 session.add(category6)
 session.commit()
 
-Item1 = MenuItem(title="Boxing gloves", description="Unleash The Speed In The Exclusive Initiator Pack. Think Fast. Hit Explosive.",
+Item1 = Item(title="Boxing gloves", description="Unleash The Speed In The Exclusive Initiator Pack. Think Fast. Hit Explosive.",
                  category=category6)
 
 session.add(Item1)
 session.commit()
 
 
-Item2 = MenuItem(title="Cup protector", description="Always Be Prepared For The biggest fight of your life with our Sporting Goods.",
+Item2 = Item(title="Cup protector", description="Always Be Prepared For The biggest fight of your life with our Sporting Goods.",
                  category=category6)
 
 session.add(Item2)
 session.commit()
 
-Item3 = MenuItem(title="Boxing shorts", description="Just do it and win.",
+Item3 = Item(title="Boxing shorts", description="Just do it and win.",
                  category=category6)
 
 session.add(Item3)
 session.commit()
 
-Item4 = MenuItem(title="Boxing rope", description="Walk into the ring like a winner!",
+Item4 = Item(title="Boxing rope", description="Walk into the ring like a winner!",
                  category=category6)
 
 session.add(Item4)
@@ -216,26 +217,26 @@ category7 = Category(title="Running")
 session.add(category7)
 session.commit()
 
-Item1 = MenuItem(title="Running shoes", description="Unleash The Speed In The Exclusive Initiator Pack. Run Fast. Run Explosive.",
+Item1 = Item(title="Running shoes", description="Unleash The Speed In The Exclusive Initiator Pack. Run Fast. Run Explosive.",
                  category=category7)
 
 session.add(Item1)
 session.commit()
 
 
-Item2 = MenuItem(title="Running shorts", description="Always Be Prepared For The Season With our Sporting Goods.",
+Item2 = Item(title="Running shorts", description="Always Be Prepared For The Season With our Sporting Goods.",
                  category=category7)
 
 session.add(Item2)
 session.commit()
 
-Item3 = MenuItem(title="Running shirt", description="Just do it and win.",
+Item3 = Item(title="Running shirt", description="Just do it and win.",
                  category=category7)
 
 session.add(Item3)
 session.commit()
 
-Item4 = MenuItem(title="Running socks", description="Don't stop running!",
+Item4 = Item(title="Running socks", description="Don't stop running!",
                  category=category7)
 
 session.add(Item4)
@@ -248,26 +249,26 @@ category8 = Category(title="Swimming")
 session.add(category8)
 session.commit()
 
-Item1 = MenuItem(title="Swimming shorts", description="Unleash The Speed In The Exclusive Initiator Pack. Think Fast. Swim Explosive.",
+Item1 = Item(title="Swimming shorts", description="Unleash The Speed In The Exclusive Initiator Pack. Think Fast. Swim Explosive.",
                  category=category8)
 
 session.add(Item1)
 session.commit()
 
 
-Item2 = MenuItem(title="Swimming cap", description="Always Be Prepared For The Season With our Sporting Goods.",
+Item2 = Item(title="Swimming cap", description="Always Be Prepared For The Season With our Sporting Goods.",
                  category=category8)
 
 session.add(Item2)
 session.commit()
 
-Item3 = MenuItem(title="Swimming goggles", description="Just do it and swim.",
+Item3 = Item(title="Swimming goggles", description="Just do it and swim.",
                  category=category8)
 
 session.add(Item3)
 session.commit()
 
-Item4 = MenuItem(title="Swimming rope", description="Swim to win!",
+Item4 = Item(title="Swimming rope", description="Swim to win!",
                  category=category8)
 
 session.add(Item4)
@@ -280,30 +281,29 @@ category9 = Category(title="Rock Climbing")
 session.add(category9)
 session.commit()
 
-Item1 = MenuItem(title="Climbing cleats", description="Unleash The Speed In The Exclusive Initiator Pack. Think Fast. Climb Explosive.",
+Item1 = Item(title="Climbing cleats", description="Unleash The Speed In The Exclusive Initiator Pack. Think Fast. Climb Explosive.",
                  category=category9)
 
 session.add(Item1)
 session.commit()
 
 
-Item2 = MenuItem(title="Climbing chalk", description="Always Be Prepared For The Season With our Sporting Goods.",
+Item2 = Item(title="Climbing chalk", description="Always Be Prepared For The Season With our Sporting Goods.",
                  category=category9)
 
 session.add(Item2)
 session.commit()
 
-Item3 = MenuItem(title="Climbing Jersey", description="Just do it and Climb to the top.",
+Item3 = Item(title="Climbing Jersey", description="Just do it and Climb to the top.",
                  category=category9)
 
 session.add(Item3)
 session.commit()
 
-Item4 = MenuItem(title="Climbing rope", description="Don't let go, use the best ropes!",
+Item4 = Item(title="Climbing rope", description="Don't let go, use the best ropes!",
                  category=category9)
 
 session.add(Item4)
 session.commit()
 
 print "Items added!"
-
