@@ -9,7 +9,7 @@ class User(Base):
     __tablename__ = 'user'
 
     id = Column(Integer, primary_key=True)
-    title = Column(String(250), nullable=False)
+    name = Column(String(250), nullable=False)
     email = Column(String(250), nullable=False)
     picture = Column(String(250))
 
@@ -17,7 +17,7 @@ class Category(Base):
     __tablename__ = 'category'
    
     id = Column(Integer, primary_key=True)
-    title = Column(String(250), nullable=False)
+    name = Column(String(250), nullable=False)
     user_id = Column(Integer, ForeignKey('user.id'))
     user = relationship(User)
 
@@ -25,7 +25,7 @@ class Category(Base):
     def serialize(self):
        """Return object data in easily serializeable format"""
        return {
-           'title'        : self.title,
+           'name'         : self.name,
            'id'           : self.id,
        }
  
@@ -33,7 +33,7 @@ class Item(Base):
     __tablename__ = 'item'
 
 
-    title =Column(String(80), nullable = False)
+    name = Column(String(80), nullable = False)
     id = Column(Integer, primary_key = True)
     description = Column(String(250))
     category_id = Column(Integer,ForeignKey('category.id'))
@@ -46,7 +46,7 @@ class Item(Base):
     def serialize(self):
        """Return object data in easily serializeable format"""
        return {
-           'title'         : self.title,
+           'name'         : self.name,
            'description'   : self.description,
            'id'            : self.id,
        }
