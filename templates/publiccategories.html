@@ -1,7 +1,7 @@
 {% extends "main.html" %}
 {% block content %}
 	<div class="row top-menu">
-		<div class="col-md-10"></div>
+		<div class="col-md-10">Catalog App</div>
 		<div class="col-md-2 text-right">
 			<a href="{{url_for('showLogin')}}">Click Here to Log in </a>
 		</div>
@@ -50,15 +50,14 @@
 		</a>
 	{% endfor %}
 
-	{% for item in items %}
-		<a href = "{{url_for('showItems', item_id = item.id)}}">
-			<div class="row">
-				<div class="col-md-1"></div>
-					<div class="col-md-10 restaurant-list">
-						<h3>{{item.name}}</h3>
-					</div>
-				<div class="col-md-1"></div>
-			</div>
-		</a>
-	{% endfor %}
+    Lastest Items
+
+		{% for item in items %}
+		<a href = "{{url_for('showItem', item_id = item.id)}}">
+				<div class="menu-item">
+					<h3>{{i.name}}</h3>
+				</div>
+		{% endfor %}
+
+
 {% endblock %}
