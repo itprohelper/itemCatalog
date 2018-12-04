@@ -52,6 +52,19 @@
 
     Lastest Items
 
+		<div class="col-md-3">
+
+				{% for item in items %}
+				<a href="{{url_for('showItem', category_id =item.category_id ,item_id = item.id )}}">
+						<div class="menu-item">
+							<h3>{{item.name}}</h3>
+							<p>{{item.description}}</p>
+							<p>it works</p>
+						</div>
+
+				{% endfor %}
+		</div>
+
 		{% for item in items %}
 		<a href = "{{url_for('showItem', item_id = item.id)}}">
 				<div class="menu-item">
