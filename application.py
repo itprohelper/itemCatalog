@@ -310,10 +310,10 @@ def newItem(category_id):
 @app.route('/category/<int:category_id>/item/<int:item_id>/edit',
            methods=['GET', 'POST'])
 def editItem(category_id, item_id):
+    edititem = session.query(Item).filter_by(id=item_id).one()
+    category = session.query(Category).filter_by(id=category_id).one()
     if 'username' not in login_session:
         return redirect('/login')
-    editItem = session.query(Item).filter_by(id=item_id).one()
-    category = session.query(Category).filter_by(id=category_id).one()
     if login_session['user_id'] != category.user_id:
         return "<script>function myFunction() {alert('You are not authorized to edit this item. Please create your own items in order to edit.');}</script><body onload='myFunction()''>"
     if request.method == 'POST':
@@ -326,7 +326,7 @@ def editItem(category_id, item_id):
         flash('Menu item Successfully edited')
         return redirect(url_for('showItem', category_id=category_id))
     else:
-        return render_template('edititem.html')
+        return render_template('edititem.html', item_id = item_id, item = editItem)
 
 
 # Delete a category item
@@ -336,7 +336,7 @@ def editItem(category_id, item_id):
 def deleteCategoryItem(category_id, item_id):
     if 'username' not in login_session:
         return redirect('/login')
-    restaurant = session.query(Category).filter_by(id=category_id).one()
+    category = session.query(Category).filter_by(id=category_id).one()
     itemToDelete = session.query(Item).filter_by(id=item_id).one()
     if login_session['user_id'] != category.user_id:
         return "<script>function myFunction() {alert('You are not authorized to delete this item. Please create your own items in order to edit.');}</script><body onload='myFunction()''>"
@@ -346,7 +346,7 @@ def deleteCategoryItem(category_id, item_id):
         flash('Item Successfully deleted!')
         return redirect(url_for('showItem', category_id=category_id))
     else:
-        return render_template('delteitem.html', item=itemToDelete)
+        return render_template('deleteitem.html', item=itemToDelete)
 
 if __name__ == '__main__':
     app.secret_key = 'super_secret_key'

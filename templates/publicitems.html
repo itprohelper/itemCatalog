@@ -42,9 +42,10 @@
 
 			<div class="col-md-3">
 					{% for item in items %}
-					<a href = "{{url_for('showItem', category_id =item.category_id ,item_description = item.description )}}">
+					<!--<a href = "{{url_for('showItem', category_id =item.category_id ,item_description = item.description )}}">-->
 							<div class="menu-item">
 								<h3>{{item.name}}</h3>
+								<p>{{item.description}}</p>
 					</a>
 			</div>
 
