@@ -318,15 +318,15 @@ def editItem(category_id, item_id):
         return "<script>function myFunction() {alert('You are not authorized to edit this item. Please create your own items in order to edit.');}</script><body onload='myFunction()''>"
     if request.method == 'POST':
         if request.form['name']:
-            editItem.name = request.form['name']
+            edititem.name = request.form['name']
         if request.form['description']:
-            editItem.description = request.form['description']
-        session.add(editItem)
+            edititem.description = request.form['description']
+        session.add(edititem)
         session.commit()
         flash('Menu item Successfully edited')
         return redirect(url_for('showItem', category_id=category_id))
     else:
-        return render_template('edititem.html', item_id = item_id, item = editItem)
+        return render_template('edititem.html', item_id = item_id, item = edititem)
 
 
 # Delete a category item
