@@ -39,14 +39,14 @@
 	{% if items !=[] %}
 		<div class="row">
 			<div class="col-md-1"></div>
-			<div class="col-md-3">
 
-					{% for i in items %}
+			<div class="col-md-3">
+					{% for item in items %}
+					<a href = "{{url_for('showItem', category_id =item.category_id ,item_description = item.description )}}">
 							<div class="menu-item">
-								<h3>{{i.name}}</h3>
-								<p>{{i.description}}</p>
-								<p>it works</p>
-							</div>
+								<h3>{{item.name}}</h3>
+					</a>
+			</div>
 
 					{% endfor %}
 			</div>
@@ -54,6 +54,6 @@
 
 
 			<div class="col-md-1"></div>
-		
+
 	{% endif %}
 {% endblock %}
