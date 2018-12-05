@@ -18,7 +18,7 @@ On Windows, Git will provide you with a Unix-style terminal and shell (Git Bash)
 
 From the terminal, run:
 
-    git clone https://github.com/udacity/OAuth2.0 oauth
+    git clone https://github.com/itprohelper/itemCatalog itemCatalog
 
 This will give you a directory named **itemcatalog** complete with the source code for the flask application, a vagrantfile, and a bootstrap.sh file for installing all of the necessary tools.
 
