@@ -200,9 +200,9 @@ def categoryJSON():
 @app.route('/category/<int:category_id>/item/JSON')
 def categoryItemJSON(category_id):
     categories = session.query(Category).filter_by(id=category_id).one()
-    items = session.query(CategoryItem).filter_by(
+    items = session.query(Item).filter_by(
         category_id=category_id).all()
-    return jsonify(CategoryItem=[i.serialize for i in items])
+    return jsonify(items=[i.serialize for i in items])
 
 
 # Show all categories
