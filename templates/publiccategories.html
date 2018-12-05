@@ -1,7 +1,9 @@
 {% extends "main.html" %}
 {% block content %}
 	<div class="row top-menu">
-		<div class="col-md-10">Catalog App</div>
+		<div class="col-md-10">
+			<h1>Catalog App</h1>
+		</div>
 		<div class="col-md-2 text-right">
 			<a href="{{url_for('showLogin')}}">Click Here to Log in </a>
 		</div>
@@ -14,11 +16,11 @@
 	<div class="row banner main">
 		<div class="col-md-1"></div>
 		<div class="col-md-11 padding-none">
-			<h1>Categories</h1>
+
 		</div>
 	</div>
 
-	<div class = 'flash'>
+<div class = 'flash'>
 		      {% with messages = get_flashed_messages() %}
       {% if messages %}
 
@@ -34,6 +36,7 @@
 	<div class="row padding-top padding-bottom">
 		<div class="col-md-1"></div>
 		<div class="col-md-10 padding-none">
+			<h2>Categories</h2>
 		</div>
 		<div class="col-md-1"></div>
 	</div>
@@ -48,24 +51,10 @@
 				<div class="col-md-1"></div>
 			</div>
 		</a>
+
 	{% endfor %}
 
-    <h1>Lastest Items</h1>
-
-		<div class="col-md-3">
-
-				{% for item in items %}
-				<a href="{{url_for('showItem', category_id = Item.category_id ,item_id = Item.id )}}">
-				<!--<a href="{{url_for('showItem', category_id =item.category_id )}}">-->
-				<div class="row">
-						<div class="menu-item">
-							<h3>{{item.name}}</h3>
-						</div>
-				</div>
-				</a>
-				{% endfor %}
-		</div>
-
+  	
 		{% for item in items %}
 		<a href = "{{url_for('showItem', item_id = item.id)}}">
 				<div class="menu-item">
