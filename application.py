@@ -210,6 +210,7 @@ def categoryItemJSON(category_id):
 @app.route('/category/')
 def showCategories():
     categories = session.query(Category).order_by(asc(Category.name))
+    items = session.query(Item).order_by(asc(Item.name))
     if 'username' not in login_session:
         return render_template('publiccategories.html', categories=categories)
     else:
