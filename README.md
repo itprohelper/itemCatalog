@@ -4,14 +4,14 @@ Project for the Udacity course
 
 In your browser visit **http://178.128.158.234.xip.io:5000/** to check out this app.
 
-# You can view JSON API structure on the following URLs:
+## You can view JSON API structure on the following URLs:
 
-View specific items:
-http://178.128.158.234.xip.io:5000/category/6/item/1/JSON
-View specific items for a category:
-http://178.128.158.234.xip.io:5000/category/2/item/JSON
-View all categories:
-http://178.128.158.234.xip.io:5000/category/JSON
+**View _specific_ items:**
+(http://178.128.158.234.xip.io:5000/category/6/item/1/JSON)
+**View _specific_ items for a category:**
+(http://178.128.158.234.xip.io:5000/category/2/item/JSON)
+**View _all_ categories:**
+(http://178.128.158.234.xip.io:5000/category/JSON)
 
 
 
