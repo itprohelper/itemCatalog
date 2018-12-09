@@ -9,7 +9,8 @@
 	<span class="glyphicon glyphicon-trash" aria-hidden="true"></span>Delete</button>
 	<a href = '{{url_for('showCategories')}}'>
 		<button class="btn btn-default delete">
-		<span class="glyphicon glyphicon-remove" aria-hidden="true"></span> Cancel</button>
+		<span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+		<a href="{{ url_for('showItem', category_id=item.category_id)}}">Cancel</a></button>
 	</a>
 
 </form>
