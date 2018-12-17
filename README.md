@@ -11,6 +11,7 @@ Please refer to the requirements.txt for a list of Python modules used.
 
 **Summary of software installed on this Ubuntu server:**
 Apache2
+
 PostgreSQL
 libapache2-mod-wsgi 
 python-dev
