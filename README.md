@@ -1,19 +1,22 @@
-# Item Catalog
+# Linux server deployment
 Project for the Udacity course
-# I did not use Vagrant for this project. I used a Digital Ocean droplet and using docker on top. DO NOT use Vangrant to follow my example.
+# Implemented Amazon's Lightsail for this project.
 
-In your browser visit **http://178.128.158.234.xip.io:5000/** to check out this app.
+In your browser visit **http://54.144.244.87.xip.io/** to check out the Items Catalog from previous project.
 
 ## You can view JSON API structure on the following URLs:
 
-**View _specific_ items:**
-(http://178.128.158.234.xip.io:5000/category/6/item/1/JSON)
+**Summary of configurations and software used:**
+Please refer to the requirements.txt for a list of Python modules used. 
 
-**View _specific_ items for a category:**
-(http://178.128.158.234.xip.io:5000/category/2/item/JSON)
+**Summary of software installed on this Ubuntu server:**
+Apache2
+PostgreSQL
+libapache2-mod-wsgi 
+python-dev
 
-**View _all_ categories:**
-(http://178.128.158.234.xip.io:5000/category/JSON)
+**Third party resources:**
+https://www.digitalocean.com/community/tutorials/how-to-deploy-a-flask-application-on-an-ubuntu-vps#step-four-%E2%80%93-configure-and-enable-a-new-virtual-host
+https://github.com/ga4gh/ga4gh-server/issues/1365
 
-To incorporate a new `client_secrets.json` into this project please follow the instructions
-provided by Google on this [link](https://developers.google.com/identity/protocols/OAuth2)
+
