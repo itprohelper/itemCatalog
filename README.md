@@ -10,6 +10,7 @@ In your browser visit **http://54.144.244.87.xip.io/** to check out the Items Ca
 
 Please refer to the requirements.txt for a list of Python modules used. 
 
+Access server via SSH on port 2200 with username ***grader*** on 54.144.244.87
 **Summary of software installed on this Ubuntu server:**
 
 Apache2
