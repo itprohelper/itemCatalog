@@ -10,6 +10,25 @@ In your browser visit **http://54.144.244.87.xip.io/** to check out the Items Ca
 
 Please refer to the requirements.txt for a list of Python modules used. 
 
+**Configurations made**
+
+The first step in this process is to install mod_wsgi:
+
+`sudo apt-get install libapache2-mod-wsgi`
+
+Add the line below on to your apache virtual host config in this case I used 000-default.conf. This tells Apache to handle requests using the WSGI module.
+
+` WSGIScriptAlias / /var/www/html/capp.wsgi`
+
+Restart Apache:
+
+`sudo apache2ctl restart`
+
+Visit the app in your browser **http://54.144.244.87.xip.io/**
+
+**/login route still not working for me. This is the Google Oauth login method - Any help will be appreciated!**
+
+
 Access server via SSH on port 2200 with username ***grader*** on 54.144.244.87
 **Summary of software installed on this Ubuntu server:**
 
