@@ -18,7 +18,7 @@ import requests
 app = Flask(__name__)
 
 CLIENT_ID = json.loads(
-    open('/var/www/html/client_secrets.json', 'r').read())['web']['client_id']
+    open('/var/www/html/Flaskapp/Flaskapp/client_secrets.json', 'r').read())['web']['client_id']
 APPLICATION_NAME = "Items Catalog"
 
 # Connect to database and create session
@@ -33,34 +33,10 @@ session = DBSession()
 # Login route and anti-forgery state token
 @app.route('/login')
 def showLogin():
-    state = ''.join(random.choice(string.ascii_uppercase + string.digits)
-                    for x in xrange(32))
+    state = ''.join(random.choice(string.ascii_uppercase + string.digits) for x in xrange(32))
     login_session['state'] = state
+    #return "hola"
     return render_template('login.html', STATE=state)
-
-
-# User helper functions
-def createUser(login_session):
-    newUser = User(name=login_session['username'], email=login_session[
-                  'email'], picture=login_session['picture'])
-    session.add(newUser)
-    session.commit()
-    user = session.query(User).filter_by(email=login_session['email']).one()
-    return user.id
-
-
-def getUserInfo(user_id):
-    user = session.query(User).filter_by(id=user_id).one()
-    return user
-
-
-def getUserID(email):
-    try:
-        user = session.query(User).filter_by(email=email).one()
-        return user.id
-    except ImportError:
-        return None
-
 
 # Login route for Google
 @app.route('/gconnect', methods=['POST'])
@@ -74,7 +50,7 @@ def gconnect():
     code = request.data
     try:
         # Upgrade the authorization code into a credentials object
-        oauth_flow = flow_from_clientsecrets('client_secrets.json', scope='')
+        oauth_flow = flow_from_clientsecrets('/var/www/html/Flaskapp/Flaskapp/client_secrets.json', scope='')
         oauth_flow.redirect_uri = 'postmessage'
         credentials = oauth_flow.step2_exchange(code)
     except FlowExchangeError:
@@ -376,8 +352,31 @@ def deleteCategoryItem(category_id, item_id):
     else:
         return render_template('deleteitem.html', item=itemToDelete)
 
+# User helper functions
+def createUser(login_session):
+    newUser = User(name=login_session['username'], email=login_session[
+                  'email'], picture=login_session['picture'])
+    session.add(newUser)
+    session.commit()
+    user = session.query(User).filter_by(email=login_session['email']).first()
+    return user.id
+
+
+def getUserInfo(user_id):
+    user = session.query(User).filter_by(id=user_id).first()
+    return user
+
+
+def getUserID(email):
+    try:
+        user = session.query(User).filter_by(email=email).first()
+        return user.id
+    except ImportError:
+        return None
+
+
 
 if __name__ == '__main__':
     app.secret_key = 'super_secret_key'
-    app.debug = True
+    #app.debug = True
     app.run(host='0.0.0.0')
