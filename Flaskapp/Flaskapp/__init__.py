@@ -115,7 +115,7 @@ def gconnect():
     login_session['provider'] = 'google'
 
     # See if user exists, if it doesn't make a new one.
-    user_id = getUserID(login_session['email'])
+    user_id = getUserID(data['email'])
     if not user_id:
         user_id = createUser(login_session)
     login_session['user_id'] = user_id
@@ -371,7 +371,7 @@ def getUserID(email):
     try:
         user = session.query(User).filter_by(email=email).first()
         return user.id
-    except ImportError:
+    except:
         return None
 
 
